@@ -4,4 +4,4 @@ A small practice project inspired by and based on the [Expanding Cards](https://
 
 The aim was to build it without referring to the original code.
 
-[Live version is viewable here](#).
+[Live version is viewable here](https://jwhodge.github.io/Expanding-Cards/).
