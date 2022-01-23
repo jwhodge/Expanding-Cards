@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap");
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: #ececec;
+  color: #ececec;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Unselected Card Format */
+.card {
+  display: flex;
+  min-width: 75px;
+  margin: calc(100vw / 72);
+  overflow: hidden;
+  background-color: #121212;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  align-items: center;
+  animation: card-shrink 2s ease;
+}
+
+.card-title {
+  writing-mode: sideways-lr;
+  margin: auto;
+}
+
+.card-description {
+  display: none;
+}
+
+/* Active Card Format */
+
+.card.active {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: calc(100vw / 4 * 3);
+  padding: calc(100% / 9);
+  background-color: #496f5d;
+  background-position: center;
+  background-size: cover;
+  animation: card-expansion 2s ease;
+}
+
+.card.active > .card-title {
+  writing-mode: horizontal-tb;
+  margin: 0 0 30px 0;
+}
+
+.card.active > .card-description {
+  display: inline;
+  animation: text-appear 2s ease;
+}
+
+/* Expansion animation */
+@keyframes card-expansion {
+  0% {
+    width: 75px;
+    background-color: #121212;
+    padding: 0;
+  }
+  100% {
+    width: calc(100vw / 4 * 3);
+    background-color: #496f5d;
+    padding: calc(100% / 9);
+  }
+}
+
+@keyframes card-shrink {
+  0% {
+    width: calc(100vw / 4 * 3);
+    background-color: #496f5d;
+  }
+  100% {
+    width: 75px;
+    background-color: #121212;
+  }
+}
+
+@keyframes text-appear {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
